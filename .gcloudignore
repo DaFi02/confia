@@ -1,0 +1,15 @@
+# Keep Cloud Build contexts small and reproducible.
+.gcloudignore
+.git
+.gitignore
+.venv
+.env
+.env.*
+!.env.example
+frontend
+stitch
+.atl
+__pycache__/
+**/__pycache__/
+*.pyc
+*.log

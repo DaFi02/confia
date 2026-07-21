@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Centro de Analítica - Luminous Finance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#da3437",
+                    "primary-container": "#6063ee",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-surface": "#191c1d",
+                    "primary-fixed": "#e1e0ff",
+                    "on-secondary-fixed-variant": "#005321",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-background": "#191c1d",
+                    "inverse-primary": "#c0c1ff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary-fixed": "#002109",
+                    "on-secondary-container": "#007432",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "tertiary": "#b61722",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "outline-variant": "#c7c4d7",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-surface-variant": "#464554",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#fffbff",
+                    "background": "#f8f9fa",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "secondary-container": "#6bff8f",
+                    "surface-container": "#edeeef",
+                    "on-error-container": "#93000a",
+                    "primary": "#6366f1",
+                    "outline": "#767586",
+                    "surface-dim": "#d9dadb",
+                    "surface-container-low": "#f3f4f5",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary": "#006e2f",
+                    "secondary-fixed": "#6bff8f",
+                    "surface-tint": "#494bd6",
+                    "on-primary-fixed": "#07006c",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed": "#410004",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8F9FA; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .chart-container {
+            position: relative;
+            height: 180px;
+            width: 100%;
+        }
+        .ai-insight-border {
+            border-left: 2px solid #6366f1;
+        }
+        .glass-gradient {
+            background: linear-gradient(90deg, rgba(255,255,255,1) 90%, rgba(99,102,241,0.1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface bg-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a friendly user for a financial dashboard. High-key lighting with a clean, minimalist white background. The subject is wearing a neutral tone shirt, conveying a sense of trustworthiness and calm sophistication within a modern personal finance application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUK0SoIFV1Tm_Bai1ZgRwfS7lavbqwM5KcEZT93dKbxf1jRZcXx3tpVubzxhs-86cHwb_OL09RI6Bw68PYi6M_KlGglLA5fnWTpehRZGnzWJtDx0jLgC0z3ciC6gxOWQKn7Lqo4VQcM9zqr-7ayJBPdb806AM0qSJk36pWFqW-o417triZRrVofKwEpqNDyVBccet2F1N2bQnU_Rel-VKC-uufu6TeG5hArZNpR5ag3oBOjcLGCE562evA6UuE5hOhHx2OBmb0ln57"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight">Centro de Analítica</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95">notifications</button>
+</div>
+</header>
+<main class="pt-20 pb-32 px-margin-mobile md:px-margin-desktop max-w-5xl mx-auto space-y-md">
+<!-- 1. Evolución de tu Tranquilidad -->
+<section class="bg-surface card-shadow rounded-xl p-md ai-insight-border">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Evolución de tu Tranquilidad</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Mira cómo ha cambiado tu puntaje en los últimos 30 días. Si la línea sube, estás tomando buenas decisiones.</p>
+<div class="chart-container flex items-end justify-between gap-1 h-32 px-2">
+<!-- Mock Line Chart SVG -->
+<svg class="w-full h-full preserve-aspect-ratio" overflow="visible" viewbox="0 0 100 40">
+<defs>
+<lineargradient id="lineGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#6366f1" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,35 Q10,32 20,25 T40,15 T60,20 T80,5 T100,10" fill="none" stroke="#6366f1" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,35 Q10,32 20,25 T40,15 T60,20 T80,5 T100,10 L100,40 L0,40 Z" fill="url(#lineGrad)"></path>
+<circle cx="80" cy="5" fill="#6366f1" r="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between mt-4 text-label-sm font-label-sm text-outline">
+<span>Hace 30 días</span>
+<span class="text-primary font-bold">Hoy: 840 pts</span>
+</div>
+</section>
+<!-- Bento Grid for 2 & 3 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- 2. Tu ritmo de gasto -->
+<section class="bg-surface card-shadow rounded-xl p-md flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Tu ritmo de gasto</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Compara lo que has gastado hasta hoy con lo que llevabas gastado el mes pasado.</p>
+<div class="flex-grow flex items-end justify-around gap-4 h-48 py-4">
+<div class="relative w-12 flex flex-col items-center">
+<div class="w-8 bg-surface-container-highest rounded-t-lg h-32 absolute bottom-0"></div>
+<div class="w-8 bg-primary rounded-t-lg h-24 relative z-10"></div>
+<span class="mt-2 text-label-sm font-label-sm text-on-surface-variant">Día 15</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-label-sm font-label-sm text-on-surface">Este mes</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+<span class="text-label-sm font-label-sm text-on-surface">Mes pasado</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. ¿En qué se va más rápido el dinero? -->
+<section class="bg-surface card-shadow rounded-xl p-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">¿En qué se va más rápido?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Tus 3 gastos más grandes del mes.</p>
+<div class="flex items-center justify-between">
+<div class="relative w-32 h-32">
+<!-- Donut Chart -->
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#e1e3e4" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#6366f1" stroke-dasharray="45 100" stroke-dashoffset="0" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#4ae176" stroke-dasharray="25 100" stroke-dashoffset="-45" stroke-width="4"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#da3437" stroke-dasharray="15 100" stroke-dashoffset="-70" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-label-sm font-label-sm text-outline">Top 3</span>
+</div>
+</div>
+<div class="space-y-sm flex-grow ml-md">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#6366f1]"></span> Vivienda</span>
+<span class="font-label-md text-label-md font-bold">45%</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#4ae176]"></span> Comida</span>
+<span class="font-label-md text-label-md font-bold">25%</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#da3437]"></span> Viajes</span>
+<span class="font-label-md text-label-md font-bold">15%</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Horizontal Row for 4 & 5 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- 4. Dinero en pequeños antojos -->
+<section class="bg-surface card-shadow rounded-xl p-md border-b-4 border-tertiary">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Pequeños antojos</h2>
+<span class="material-symbols-outlined text-tertiary text-3xl">coffee</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Esos gastos diarios que parecen poco, pero se acumulan.</p>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-tertiary">$120</span>
+<span class="font-label-md text-label-md text-on-surface-variant">este mes</span>
+</div>
+<div class="mt-4 bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-sm text-label-sm">Equivale a 3 suscripciones de streaming</span>
+</div>
+</section>
+<!-- 5. Tu Colchón de Seguridad -->
+<section class="bg-surface card-shadow rounded-xl p-md overflow-hidden relative">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Colchón de Seguridad</h2>
+<span class="material-symbols-outlined text-secondary text-3xl">calendar_today</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Días que podrías cubrir tus gastos básicos sin ingresos.</p>
+<div class="flex flex-col items-center justify-center py-4 bg-secondary-container/20 rounded-xl">
+<span class="font-headline-xl text-headline-xl text-secondary font-extrabold">45 días</span>
+<span class="font-label-md text-label-md text-on-secondary-fixed-variant">Nivel: Estable</span>
+</div>
+</section>
+</div>
+<!-- 6. Disponible para gastar hoy -->
+<section class="bg-surface card-shadow rounded-xl p-md glass-gradient">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Disponible para gastar hoy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Mantente dentro de tu presupuesto mensual.</p>
+</div>
+<div class="mt-4 md:mt-0 text-right">
+<span class="font-headline-lg text-headline-lg text-primary block">$35.00 libres</span>
+<span class="font-label-md text-label-md text-outline">Límite diario sugerido</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-6 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-1000 ease-out" style="width: 60%"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm text-outline">
+<span>Gastado: $52.00</span>
+<span>Restante: $35.00</span>
+</div>
+</section>
+<!-- AI Advice (Contextual) -->
+<div class="bg-primary-container text-on-primary-container p-md rounded-xl flex gap-md items-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<div>
+<h3 class="font-label-md text-label-md font-bold uppercase tracking-wider">Consejo de Luminous AI</h3>
+<p class="font-body-md text-body-md">Si reduces tus "pequeños antojos" en un 20% el próximo mes, podrías aumentar tu colchón de seguridad a 52 días.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface dark:bg-inverse-surface shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-dim text-on-primary-container dark:text-on-primary-fixed-variant rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md mt-1">Analysis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md mt-1">AI Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md mt-1">Settings</span>
+</a>
+</nav>
+<script>
+        // Simple entry animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('section, .bg-primary-container');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body></html>

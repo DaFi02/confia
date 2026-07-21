@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Editar Movimiento - confIA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#464554",
+                        "on-secondary-fixed-variant": "#005321",
+                        "outline-variant": "#c7c4d7",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "outline": "#767586",
+                        "inverse-primary": "#c0c1ff",
+                        "primary": "#4648d4",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#002109",
+                        "primary-fixed": "#e1e0ff",
+                        "secondary-fixed-dim": "#4ae176",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#006e2f",
+                        "secondary-fixed": "#6bff8f",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#007432",
+                        "on-background": "#191c1d",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#b61722",
+                        "tertiary-container": "#da3437",
+                        "on-primary-fixed": "#07006c",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface-tint": "#494bd6",
+                        "tertiary-fixed": "#ffdad7",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#6063ee",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#6bff8f",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed": "#410004"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "24px",
+                        "lg": "40px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .ai-glow {
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(99, 102, 241, 0.05) 100%);
+            border-left: 3px solid #4648d4;
+        }
+        .modal-overlay {
+            backdrop-filter: blur(8px);
+            background-color: rgba(25, 28, 29, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen overflow-x-hidden">
+<!-- Modal Container -->
+<div class="modal-overlay fixed inset-0 z-[100] flex items-end md:items-center justify-center p-0 md:p-md">
+<!-- Modal Content Canvas -->
+<main class="bg-surface-container-lowest w-full max-w-2xl h-[813px] md:h-auto md:max-h-[795px] overflow-y-auto rounded-t-xl md:rounded-xl custom-shadow flex flex-col relative animate-in slide-in-from-bottom duration-300">
+<!-- Header -->
+<header class="flex justify-between items-center px-margin-mobile md:px-md py-base border-b border-surface-variant sticky top-0 bg-surface-container-lowest z-10">
+<h1 class="font-headline-md text-headline-md text-on-surface">Editar Movimiento</h1>
+<button aria-label="Cerrar" class="p-base hover:bg-surface-variant rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</header>
+<div class="p-margin-mobile md:p-md space-y-md">
+<!-- Transaction Preview Card -->
+<section class="ai-glow p-md rounded-xl space-y-xs">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Vista Previa</p>
+<h2 class="font-headline-md text-headline-md">Supermercado Central</h2>
+</div>
+<span class="font-headline-md text-headline-md text-tertiary">-$85.20</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-label-md text-primary">auto_awesome</span>
+<p class="font-label-md text-label-md text-primary">IA detectó categoría: Alimentación</p>
+</div>
+</section>
+<!-- Form Fields -->
+<form class="space-y-md">
+<!-- Name Description -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs" for="merchant">Nombre del comercio</label>
+<input class="w-full bg-surface-bright border-none focus:ring-2 focus:ring-primary rounded-xl p-md font-body-md text-on-surface placeholder-outline transition-all" id="merchant" placeholder="Ej. Amazon, Netflix..." type="text" value="Supermercado Central"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Amount -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs" for="amount">Monto</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">$</span>
+<input class="w-full bg-surface-bright border-none focus:ring-2 focus:ring-primary rounded-xl pl-lg p-md font-body-md text-on-surface transition-all" id="amount" step="0.01" type="number" value="85.20"/>
+</div>
+</div>
+<!-- Date -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs" for="date">Fecha</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border-none focus:ring-2 focus:ring-primary rounded-xl p-md font-body-md text-on-surface transition-all" id="date" type="date" value="2023-11-24"/>
+</div>
+</div>
+</div>
+<!-- Category -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs" for="category">Categoría</label>
+<select class="w-full bg-surface-bright border-none focus:ring-2 focus:ring-primary rounded-xl p-md font-body-md text-on-surface appearance-none transition-all" id="category">
+<option selected="" value="alimentacion">Alimentación</option>
+<option value="transporte">Transporte</option>
+<option value="ocio">Ocio</option>
+<option value="vivienda">Vivienda</option>
+<option value="salud">Salud</option>
+<option value="otros">Otros</option>
+</select>
+</div>
+<!-- Evidence / Receipt Upload -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs">Actualizar comprobante</label>
+<div class="flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-xl p-lg bg-surface-bright hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="h-48 w-full mb-md overflow-hidden rounded-lg shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro photograph of a neatly folded paper receipt lying on a white marble surface, illuminated by bright, soft morning light. The composition is clean and minimalist, following the modern light-mode aesthetic of the app. The focus is sharp on the text of the receipt, emphasizing financial precision and clarity. High-tech, soft indigo accents are subtly present in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8vGPpe0jcp8LelsD7xY0s4Bjxqv3IAd_a0sjx5QRmfwefbtg9tNTGZfIoV_NA0dBXHDPScjrvO2NG3gdyMb6MwKGvke9jPfvxB81IomA2V8ha_CsVAXpWMAST6-MONUlBOUJMeu4NSh6zWKN6pDdUgGfpfoqLOkb0sHO5KYP90VyjR37Cc2B2sTS4Y5HfspkxTjNRK3LOF8oWzvhNxvS-dZsS9CQngXenyiexpGWFiEy9i63eSZqQ4bneHRqzmJlkKGVb_2SFABL0"/>
+</div>
+<button class="flex items-center gap-base text-primary font-label-md" type="button">
+<span class="material-symbols-outlined">add_a_photo</span>
+<span>Reemplazar imagen</span>
+</button>
+</div>
+</div>
+<!-- Status Toggle -->
+<div class="flex items-center justify-between p-md bg-surface-bright rounded-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Completado</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Action Buttons -->
+<div class="pt-md space-y-base">
+<button class="w-full bg-primary text-on-primary font-headline-md py-md rounded-xl shadow-lg hover:opacity-90 active:scale-95 transition-all" type="submit">
+                            Guardar Cambios
+                        </button>
+<button class="w-full border-2 border-error text-error font-label-md py-md rounded-xl hover:bg-error-container/20 active:scale-95 transition-all" type="button">
+                            Eliminar Movimiento
+                        </button>
+</div>
+</form>
+</div>
+<!-- Bottom safe area for mobile -->
+<div class="h-margin-mobile md:hidden"></div>
+</main>
+</div>
+<!-- Background Elements (The Context screen behind the modal) -->
+<div class="fixed inset-0 -z-10 p-md opacity-40 blur-sm pointer-events-none">
+<div class="max-w-4xl mx-auto space-y-md">
+<div class="h-12 w-48 bg-outline-variant rounded-lg"></div>
+<div class="grid grid-cols-1 gap-md">
+<div class="h-32 bg-surface-container-high rounded-xl"></div>
+<div class="h-32 bg-surface-container-high rounded-xl"></div>
+<div class="h-32 bg-surface-container-high rounded-xl"></div>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interaction for the status toggle
+        document.querySelector('input[type="checkbox"]').addEventListener('change', function(e) {
+            const statusText = this.closest('div').querySelector('.font-body-md');
+            const statusIcon = this.closest('div').querySelector('.material-symbols-outlined');
+            if (this.checked) {
+                statusText.innerText = "Completado";
+                statusIcon.innerText = "check_circle";
+                statusIcon.classList.replace('text-on-surface-variant', 'text-primary');
+            } else {
+                statusText.innerText = "Pendiente evidencia";
+                statusIcon.innerText = "pending";
+                statusIcon.classList.replace('text-primary', 'text-on-surface-variant');
+            }
+        });
+
+        // Close modal simulation
+        document.querySelector('button[aria-label="Cerrar"]').addEventListener('click', () => {
+            const modal = document.querySelector('main');
+            modal.classList.remove('slide-in-from-bottom');
+            modal.classList.add('animate-out', 'fade-out', 'slide-out-to-bottom', 'duration-300');
+            setTimeout(() => {
+                document.querySelector('.modal-overlay').style.display = 'none';
+            }, 250);
+        });
+    </script>
+</body></html>

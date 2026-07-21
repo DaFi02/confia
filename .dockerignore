@@ -1,0 +1,13 @@
+.venv
+__pycache__
+*.pyc
+.env
+.env.*
+.git
+.gitignore
+frontend
+stitch
+README.md
+BACKEND_CONNECTION.md
+CODEX_PROMPT.md
+DESIGN.md

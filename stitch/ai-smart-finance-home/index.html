@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Smart Finance Home — Screens</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: #191c1d;
+    padding: 40px 24px;
+  }
+  h1 { text-align: center; margin-bottom: 8px; }
+  p.subtitle { text-align: center; color: #464554; margin-bottom: 40px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e1e3e4;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .card img {
+    width: 100%;
+    display: block;
+    background: #edeeef;
+    aspect-ratio: 390 / 844;
+    object-fit: cover;
+  }
+  .card .label {
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <h1>AI Smart Finance Home</h1>
+  <p class="subtitle">Luminous Finance — pantallas generadas en Stitch</p>
+  <div class="grid">
+    <a class="card" href="02-onboarding/screen.html">
+      <img src="02-onboarding/screenshot.jpg" alt="Onboarding">
+      <div class="label">Onboarding</div>
+    </a>
+    <a class="card" href="05-home/screen.html">
+      <img src="05-home/screenshot.jpg" alt="Home">
+      <div class="label">Home</div>
+    </a>
+    <a class="card" href="04-ai-hub/screen.html">
+      <img src="04-ai-hub/screenshot.jpg" alt="AI Hub">
+      <div class="label">AI Hub</div>
+    </a>
+    <a class="card" href="03-historial/screen.html">
+      <img src="03-historial/screenshot.jpg" alt="Historial">
+      <div class="label">Historial</div>
+    </a>
+    <a class="card" href="06-analitica/screen.html">
+      <img src="06-analitica/screenshot.png" alt="Centro de Analítica">
+      <div class="label">Centro de Analítica</div>
+    </a>
+  </div>
+</body>
+</html>

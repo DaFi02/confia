@@ -1,0 +1,11 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg
+      - NEXT_PUBLIC_API_URL=https://confia-backend.dafi.dev
+      - -t
+      - us-central1-docker.pkg.dev/synapse-dafi/cloud-run-source-deploy/confia-frontend:receipt-ux-20260721
+      - .
+images:
+  - us-central1-docker.pkg.dev/synapse-dafi/cloud-run-source-deploy/confia-frontend:receipt-ux-20260721
