@@ -17,6 +17,13 @@ confIA is a financial copilot that helps someone:
 
 It's a **real, functional app**: data travels between the browser and a real backend with a Postgres database and private cloud storage — not static mockup images.
 
+## How this was built
+
+- **Design:** UI screens generated in Google Stitch (`stitch/`), translated into a working Tailwind CSS v4 design system.
+- **Backend scaffolding:** the initial FastAPI backend was generated from a detailed prompt fed to **OpenAI Codex** — see [`CODEX_PROMPT.md`](./CODEX_PROMPT.md) for the exact brief used, including the full API contract Codex had to satisfy against the already-built frontend.
+- **Iteration:** the app was then hardened, extended, and deployed with an AI coding agent across several sessions (multi-currency, i18n, per-visitor isolation, receipt storage, Cloud Run deployment, and the fixes described below).
+- **Runtime AI (what actually powers the live app):** confIA's own product features — AI Hub chat, receipt scanning, and proactive insights — run on **NVIDIA NIM** models, not GPT or Codex. See [Notes for the hackathon demo](#notes-for-the-hackathon-demo) for the exact model names.
+
 ## Highlights beyond the original prototype
 
 Built on top of the initial Codex-generated backend (see [`CODEX_PROMPT.md`](./CODEX_PROMPT.md) for the original brief), the app was hardened for a real multi-user, multi-timezone, multi-language deployment:
